@@ -44,10 +44,10 @@ model = tf.keras.Sequential([
 model.summary()
 
 model.compile(loss="sparse_categorical_crossentropy", optimizer="adam", metrics=['accuracy'])
-model.fit(trainX, trainY, epochs=5)
+model.fit(trainX, trainY, validation_data=(testX,testY), epochs=5)
 
 
 # 모델 평가
 ## 컴퓨터가 처음보는 데이터를 넣어줘야한다.
-score = model.evaluate(testX, testY)
-print(score)
+# score = model.evaluate(testX, testY)
+# print(score)
